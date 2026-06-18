@@ -7,7 +7,7 @@ import { env } from "./src/utils/env"
 export default defineConfig({
   schema: 'src/prisma',
   migrations: {
-    path: 'prisma/migrations',
+    path: 'src/prisma/migrations',
     seed: 'tsx prisma/seed.ts',
   },
   datasource: {
