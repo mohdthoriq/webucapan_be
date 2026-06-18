@@ -14,6 +14,7 @@ import greetingPhotoRouter from "./routers/greeting-photo.router"
 import greetingSettingRouter from "./routers/gretting-setting.router"
 import greetingShareRouter from "./routers/gretting-share.router"
 import greetingViewRouter from "./routers/greeting-view.router"
+import musicRouter from "./routers/music.router"
 
 const app: Application = express()
 
@@ -55,6 +56,7 @@ app.use('/api/v1/files', fileRouter)
 app.use('/api/v1/greeting-setting', greetingSettingRouter)
 app.use('/api/v1/greeting-share', greetingShareRouter)
 app.use('/api/v1/greeting-view', greetingViewRouter)
+app.use('/api/v1/musics', musicRouter)
 
 
 app.get(/.*/, (req: Request, res: Response) => {
