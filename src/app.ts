@@ -63,6 +63,8 @@ app.use('/api/v1/themes', themeRouter)
 app.use('/api/v1/theme-effect', themeEffectRouter)
 
 
+
+
 app.get(/.*/, (req: Request, res: Response) => {
   throw new Error(`Route ${req.originalUrl} tidak ada di API E-Commerce`);
 })
