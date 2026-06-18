@@ -1,0 +1,16 @@
+model Theme {
+  id                 String   @id @db.VarChar(50) @default(uuid())
+  name               String   @db.VarChar(100)
+  emoji              String?  @db.VarChar(10)
+  background_gradient String
+  confetti_colors     Json?
+  is_active           Boolean  @default(true)
+
+  greetings          Greeting[]
+  theme_effects       ThemeEffect[]
+
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+
+  @@map("themes")
+}

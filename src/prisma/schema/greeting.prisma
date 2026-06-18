@@ -1,0 +1,57 @@
+model Greeting {
+  id            String @id @default(uuid()) @db.Uuid
+
+  slug          String @unique @db.VarChar(8)
+
+  recipient_name String @db.VarChar(255)
+
+  occasion      String @db.VarChar(100)
+
+  message       String
+
+  sender_name   String @db.VarChar(255)
+
+  theme_id      String @db.VarChar(50)
+
+  music_source  MusicSource @default(library)
+
+  music_id      String? @db.Uuid
+
+  uploaded_music_file_id String? @db.Uuid
+
+  thumbnail_file_id String? @db.Uuid
+
+  status        GreetingStatus @default(draft)
+
+  view_count     Int @default(0)
+
+  share_count    Int @default(0)
+
+  expires_at     DateTime?
+
+  created_at     DateTime @default(now())
+
+  updated_at     DateTime @updatedAt
+
+  theme         Theme @relation(fields: [theme_id], references: [id])
+
+  music         Music? @relation(fields: [music_id], references: [id])
+
+  uploaded_music File? @relation("UploadedMusic",fields: [uploaded_music_file_id],references: [id])
+
+  thumbnail     File? @relation("Thumbnail",fields: [thumbnail_file_id],references: [id])
+
+  photos        GreetingPhoto[]
+
+  settings      GreetingSetting?
+
+  views         GreetingView[]
+
+  shares        GreetingShare[]
+
+  @@index([slug])
+  @@index([theme_id])
+  @@index([created_at])
+
+  @@map("greetings")
+}

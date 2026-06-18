@@ -1,43 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
 generator client {
-  provider = "prisma-client-js"
-  output   = "../generated"
+  provider        = "prisma-client-js"
+  previewFeatures = ["prismaSchemaFolder"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider  = "postgresql"
 }
 
-enum user_role {
-  ADMIN
-  WALI_SANTRI
+enum GreetingStatus {
+  draft
+  published
+  expired
+  deleted
 }
 
-enum category_type {
-  PEMASUKAN
-  PENGELUARAN
-}
-
-enum PaymentStatus {
-  PENDING
-  PAID
-  FAILED
-  EXPIRED
-}
-
-enum InvoiceStatus {
-  UNPAID
-  PARTIAL
-  PAID
-  EXPIRED
-}
-
-enum PlanInterval {
-  MONTHLY
-  YEARLY
-}
-
-enum SubscriptionStatus {
-  ACTIVE
-  EXPIRED
-  CANCELED
+enum MusicSource {
+  library
+  upload
 }
