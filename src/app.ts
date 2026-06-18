@@ -11,6 +11,7 @@ import effectRouter from "./routers/effect.router"
 import greetingRouter from "./routers/greeting.router"
 import fileRouter from "./routers/file.router"
 import greetingPhotoRouter from "./routers/greeting-photo.router"
+import greetingSettingRouter from "./routers/gretting-setting.router"
 
 const app: Application = express()
 
@@ -49,6 +50,7 @@ app.use('/api/v1/effect', effectRouter);
 app.use('/api/v1/greeting', greetingRouter)
 app.use('/api/v1/greeting-photo', greetingPhotoRouter)
 app.use('/api/v1/files', fileRouter)
+app.use('/api/v1/greeting-setting', greetingSettingRouter)
 
 
 app.get(/.*/, (req: Request, res: Response) => {
