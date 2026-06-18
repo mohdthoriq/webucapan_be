@@ -16,6 +16,7 @@ import greetingShareRouter from "./routers/gretting-share.router"
 import greetingViewRouter from "./routers/greeting-view.router"
 import musicRouter from "./routers/music.router"
 import themeRouter from "./routers/theme-router"
+import themeEffectRouter from "./routers/theme-effect.router"
 
 const app: Application = express()
 
@@ -59,6 +60,9 @@ app.use('/api/v1/greeting-share', greetingShareRouter)
 app.use('/api/v1/greeting-view', greetingViewRouter)
 app.use('/api/v1/musics', musicRouter)
 app.use('/api/v1/themes', themeRouter)
+app.use('/api/v1/theme-effect', themeEffectRouter)
+
+
 
 
 app.get(/.*/, (req: Request, res: Response) => {
