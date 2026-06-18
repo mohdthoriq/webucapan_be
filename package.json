@@ -1,11 +1,8 @@
 {
-  "name": "day3",
+  "name": "webUcapan",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "prisma": {
-    "schema": "./prisma"
-  },
   "scripts": {
     "prisma:generate": "prisma generate --schema=src/prisma",
     "prisma:migrate": "prisma generate --schema=src/prisma && prisma migrate dev --schema=src/prisma",

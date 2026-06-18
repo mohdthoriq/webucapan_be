@@ -1,0 +1,17 @@
+model GreetingSetting {
+  greeting_id          String @id @db.Uuid
+
+  autoplay_music       Boolean @default(true)
+
+  show_confetti        Boolean @default(true)
+
+  show_slideshow       Boolean @default(true)
+
+  allow_download_photo  Boolean @default(false)
+
+  greeting Greeting @relation(fields: [greeting_id],references: [id],onDelete: Cascade)
+
+  created_at DateTime @default(now())
+
+  @@map("greeting_settings")
+}

@@ -1,0 +1,20 @@
+model GreetingView {
+  id         String @id @default(uuid()) @db.Uuid
+
+  greeting_id String @db.Uuid
+
+  ip_address  String? @db.VarChar(255)
+
+  user_agent  String?
+
+  referrer   String?
+
+  viewed_at   DateTime @default(now())
+
+  greeting Greeting @relation(fields: [greeting_id],references: [id],onDelete: Cascade)
+
+  @@index([greeting_id])
+  @@index([viewed_at])
+
+  @@map("greeting_views")
+}

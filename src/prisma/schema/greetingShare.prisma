@@ -1,0 +1,15 @@
+model GreetingShare {
+  id         String @id @default(uuid()) @db.Uuid
+
+  greeting_id String @db.Uuid
+
+  platform   String @db.VarChar(50)
+
+  shared_at   DateTime @default(now())
+
+  greeting Greeting @relation(fields: [greeting_id],references: [id],onDelete: Cascade)
+
+  @@index([greeting_id])
+
+  @@map("greeting_shares")
+}

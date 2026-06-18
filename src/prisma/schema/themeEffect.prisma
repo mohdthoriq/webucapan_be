@@ -1,0 +1,13 @@
+model ThemeEffect {
+  theme_id  String @db.VarChar(50)
+
+  effect_id String @db.Uuid
+
+  theme  Theme @relation(fields: [theme_id],references: [id],onDelete: Cascade)
+
+  effect Effect @relation(fields: [effect_id],references: [id],onDelete: Cascade)
+
+  @@id([theme_id, effect_id])
+
+  @@map("theme_effects")
+}
