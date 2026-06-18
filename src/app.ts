@@ -10,6 +10,7 @@ import swaggerUi from "swagger-ui-express";
 import effectRouter from "./routers/effect.router"
 import greetingRouter from "./routers/greeting.router"
 import fileRouter from "./routers/file.router"
+import greetingPhotoRouter from "./routers/greeting-photo.router"
 
 const app: Application = express()
 
@@ -46,6 +47,7 @@ app.get('/', (_req: Request, res: Response) => {
 
 app.use('/api/v1/effect', effectRouter);
 app.use('/api/v1/greeting', greetingRouter)
+app.use('/api/v1/greeting-photo', greetingPhotoRouter)
 app.use('/api/v1/files', fileRouter)
 
 
