@@ -8,7 +8,8 @@ import { errorHandler } from "./middlewares/error.handler";
 import { requestLogger } from "./middlewares/logging.middleware";
 import swaggerUi from "swagger-ui-express";
 import effectRouter from "./routers/effect.router"
-
+import greetingRouter from "./routers/greeting.router"
+import fileRouter from "./routers/file.router"
 
 const app: Application = express()
 
@@ -43,7 +44,9 @@ app.get('/', (_req: Request, res: Response) => {
   )
 })
 
-app.use('/api/effect', effectRouter);
+app.use('/api/v1/effect', effectRouter);
+app.use('/api/v1/greeting', greetingRouter)
+app.use('/api/v1/files', fileRouter)
 
 
 app.get(/.*/, (req: Request, res: Response) => {
