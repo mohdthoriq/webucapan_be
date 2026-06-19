@@ -10,7 +10,7 @@
     "seed": "tsx src/prisma/seeder.ts",
     "dev": "tsx watch src/index.ts",
     "start": "npx prisma migrate deploy && node dist/index.js",
-    "build": "prisma generate --schema=src/prisma && tsc && ts-add-js-extension --dir=dist && cp -r src/generated dist/generated",
+    "build": "prisma generate --schema=src/prisma && tsc && ts-add-js-extension --dir=dist",
     "test": "jest"
   },
   "keywords": [],

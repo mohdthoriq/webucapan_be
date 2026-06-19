@@ -1,19 +1,26 @@
 import { Router } from 'express';
 import { GreetingPhotoController } from 'controllers/greetingPhotoController';
+import { validate } from 'middlewares/validate.middleware';
+import {
+  greetingPhotoIdSchema,
+  greetingPhotoByGreetingIdSchema,
+  createGreetingPhotoSchema,
+  updateGreetingPhotoSchema,
+  reorderGreetingPhotoSchema,
+} from 'validators/greeting-photo.validator';
 
 const router = Router();
 const greetingPhotoController = new GreetingPhotoController();
 
 router.get('/', greetingPhotoController.getAll);
-router.get('/:id', greetingPhotoController.getById);
-router.get('/greeting/:greetingId', greetingPhotoController.getByGreetingId);
+router.get('/:id', validate(greetingPhotoIdSchema), greetingPhotoController.getById);
+router.get('/greeting/:greetingId', validate(greetingPhotoByGreetingIdSchema), greetingPhotoController.getByGreetingId);
 
-router.post('/', greetingPhotoController.create);
+router.post('/', validate(createGreetingPhotoSchema), greetingPhotoController.create);
 
-router.put('/:id', greetingPhotoController.update);
+router.put('/reorder', validate(reorderGreetingPhotoSchema), greetingPhotoController.reorder);
+router.put('/:id', validate(updateGreetingPhotoSchema), greetingPhotoController.update);
 
-router.put('/reorder', greetingPhotoController.reorder);
-
-router.delete('/:id', greetingPhotoController.delete);
+router.delete('/:id', validate(greetingPhotoIdSchema), greetingPhotoController.delete);
 
 export default router;
