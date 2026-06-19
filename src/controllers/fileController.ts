@@ -7,14 +7,14 @@ const fileService = new FileService();
 // Helper untuk menghindari error "Do not know how to serialize a BigInt"
 const serializeData = (data: any) => {
   return JSON.parse(
-    JSON.stringify(data, (key, value) =>
+    JSON.stringify(data, (_key, value) =>
       typeof value === 'bigint' ? value.toString() : value
     )
   );
 };
 
 export class FileController {
-  async getAll(req: Request, res: Response) {
+  async getAll(_req: Request, res: Response) {
     const files = await fileService.getAllFiles();
     successResponse(res, "Get all files successfully", serializeData(files), null, 200);
   }

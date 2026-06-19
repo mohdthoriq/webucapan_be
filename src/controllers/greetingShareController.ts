@@ -5,7 +5,7 @@ import { successResponse } from '../utils/response';
 const shareService = new GreetingShareService();
 
 export class GreetingShareController {
-  async getAll(req: Request, res: Response) {
+  async getAll(_req: Request, res: Response) {
       const shares = await shareService.getAllShares();
       successResponse(res, 'Berhasil mengambil data log share', shares)
   }

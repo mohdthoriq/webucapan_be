@@ -5,7 +5,7 @@ import { successResponse } from '../utils/response';
 const greetingService = new GreetingService();
 
 export class GreetingController {
-  async getAll(req: Request, res: Response) {
+  async getAll(_req: Request, res: Response) {
     const greetings = await greetingService.getAllGreetings();
     successResponse(res, 'Berhasil mengambil data ucapan', greetings)
   }

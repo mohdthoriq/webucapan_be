@@ -5,7 +5,7 @@ import { successResponse } from '../utils/response';
 const viewService = new GreetingViewService();
 
 export class GreetingViewController {
-  async getAll(req: Request, res: Response) {
+  async getAll(_req: Request, res: Response) {
       const views = await viewService.getAllViews();
       successResponse(res, 'Berhasil mendapatkan semua data log view', views);
   }

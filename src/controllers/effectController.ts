@@ -5,7 +5,7 @@ import { successResponse } from '../utils/response';
 const effectService = new EffectService();
 
 export class EffectController {
-  async getAll(req: Request, res: Response) {
+  async getAll(_req: Request, res: Response) {
     const effects = await effectService.getAllEffects();
     successResponse(res, "Get all effects successfully", effects, null, 200)
   }

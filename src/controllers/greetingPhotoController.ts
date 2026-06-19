@@ -6,14 +6,14 @@ const greetingPhotoService = new GreetingPhotoService();
 
 const serializeData = (data: any) => {
   return JSON.parse(
-    JSON.stringify(data, (key, value) =>
+    JSON.stringify(data, (_key, value) =>
       typeof value === 'bigint' ? value.toString() : value
     )
   );
 };
 
 export class GreetingPhotoController {
-  async getAll(req: Request, res: Response) {
+  async getAll(_req: Request, res: Response) {
       const photos = await greetingPhotoService.getAllPhotos();
       successResponse(res, 'Berhasil mengambil data foto ucapan', photos)
   }
