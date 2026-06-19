@@ -8,7 +8,7 @@ import {
   updateGreetingViewSchema,
 } from 'validators/greeting-view.validator';
 
-const router = Router();
+const router: Router = Router();
 const controller = new GreetingViewController();
 
 router.get('/', controller.getAll);

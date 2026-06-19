@@ -8,7 +8,7 @@ import {
   updateMusicSchema,
 } from 'validators/music.validator';
 
-const router = Router();
+const router: Router = Router();
 const controller = new MusicController();
 
 router.get('/', validate(queryMusicSchema), controller.getAll);

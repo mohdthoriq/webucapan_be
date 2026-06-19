@@ -8,7 +8,7 @@ import {
   updateThemeSchema,
 } from 'validators/theme.validator';
 
-const router = Router();
+const router: Router = Router();
 const controller = new ThemeController();
 
 // Mengambil seluruh tema (bisa menggunakan query ?activeOnly=true)

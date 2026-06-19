@@ -9,7 +9,7 @@ import {
   reorderGreetingPhotoSchema,
 } from 'validators/greeting-photo.validator';
 
-const router = Router();
+const router: Router = Router();
 const greetingPhotoController = new GreetingPhotoController();
 
 router.get('/', greetingPhotoController.getAll);

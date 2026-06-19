@@ -6,7 +6,7 @@ import {
   upsertGreetingSettingSchema,
 } from 'validators/greeting-setting.validator';
 
-const router = Router();
+const router: Router = Router();
 const controller = new GreetingSettingController();
 
 router.get('/:greetingId', validate(greetingSettingIdSchema), controller.getByGreetingId);

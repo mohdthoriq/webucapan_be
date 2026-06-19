@@ -8,7 +8,7 @@ import {
   updateGreetingShareSchema,
 } from 'validators/greeting-share.validator';
 
-const router = Router();
+const router: Router = Router();
 const controller = new GreetingShareController();
 
 // Mengambil semua log share

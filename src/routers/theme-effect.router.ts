@@ -8,7 +8,7 @@ import {
   assignThemeEffectSchema,
 } from 'validators/theme-effect.validator';
 
-const router = Router();
+const router: Router = Router();
 const controller = new ThemeEffectController();
 
 // Mengambil daftar relasi berdasarkan Theme atau Effect

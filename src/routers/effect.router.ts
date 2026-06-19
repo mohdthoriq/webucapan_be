@@ -3,7 +3,7 @@ import { EffectController } from 'controllers/effectController';
 import { validate } from 'middlewares/validate.middleware';
 import { createEffectSchema, updateEffectSchema } from 'validators/effect.validator';
 
-const router = Router();
+const router: Router = Router();
 const effectController = new EffectController();
 
 // Definisikan rute CRUD
