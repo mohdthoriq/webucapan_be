@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 import { MusicService } from '../services/music.service';
-import { successResponse } from 'utils/response';
+import { successResponse } from '../utils/response';
 
 const musicService = new MusicService();
 

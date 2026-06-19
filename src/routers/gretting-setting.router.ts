@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { GreetingSettingController } from 'controllers/grettingSettingController';
-import { validate } from 'middlewares/validate.middleware';
+import { GreetingSettingController } from '../controllers/grettingSettingController';
+import { validate } from '../middlewares/validate.middleware';
 import {
   greetingSettingIdSchema,
   upsertGreetingSettingSchema,
-} from 'validators/greeting-setting.validator';
+} from '../validators/greeting-setting.validator';
 
 const router: Router = Router();
 const controller = new GreetingSettingController();

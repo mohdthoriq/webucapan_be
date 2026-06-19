@@ -1,4 +1,4 @@
-import { prisma } from 'config/prisma';
+import { prisma } from '../config/prisma';
 import { Prisma, type Theme } from '@prisma/client';
 
 export class ThemeRepository {

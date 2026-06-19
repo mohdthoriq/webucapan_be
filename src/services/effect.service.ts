@@ -1,4 +1,4 @@
-import { EffectRepository } from 'repositories/effect.repository';
+import { EffectRepository } from '../repositories/effect.repository';
 
 
 export class EffectService {

@@ -1,4 +1,4 @@
-import { FileRepository } from 'repositories/file.repository';
+import { FileRepository } from '../repositories/file.repository';
 import { Prisma } from '@prisma/client';
 
 export class FileService {

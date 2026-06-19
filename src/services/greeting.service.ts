@@ -1,4 +1,4 @@
-import { GreetingRepository } from 'repositories/greeting.repository';
+import { GreetingRepository } from '../repositories/greeting.repository';
 import type { Prisma } from '@prisma/client';
 
 export class GreetingService {

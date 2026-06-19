@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { GreetingSettingService } from 'services/gretting-setting.service';
-import { successResponse } from 'utils/response';
+import { GreetingSettingService } from '../services/gretting-setting.service';
+import { successResponse } from '../utils/response';
 
 const settingService = new GreetingSettingService();
 

@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { GreetingController } from 'controllers/greetingController';
-import { validate } from 'middlewares/validate.middleware';
+import { GreetingController } from '../controllers/greetingController';
+import { validate } from '../middlewares/validate.middleware';
 import {
   greetingIdSchema,
   greetingSlugSchema,
   createGreetingSchema,
   updateGreetingSchema,
-} from 'validators/greeting.validator';
+} from '../validators/greeting.validator';
 
 const router: Router = Router();
 const greetingController = new GreetingController();

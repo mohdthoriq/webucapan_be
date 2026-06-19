@@ -1,4 +1,4 @@
-import { ThemeRepository } from 'repositories/theme.repository';
+import { ThemeRepository } from '../repositories/theme.repository';
 import { Prisma } from '@prisma/client';
 
 export class ThemeService {

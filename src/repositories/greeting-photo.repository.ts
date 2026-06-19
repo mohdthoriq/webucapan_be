@@ -1,4 +1,4 @@
-import { prisma } from 'config/prisma';
+import { prisma } from '../config/prisma';
 import { Prisma, type GreetingPhoto } from '@prisma/client';
 
 export class GreetingPhotoRepository {

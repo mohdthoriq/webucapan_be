@@ -1,5 +1,5 @@
 import type { Prisma, Greeting } from '@prisma/client';
-import { prisma } from 'config/prisma';
+import { prisma } from '../config/prisma';
 
 export class GreetingRepository {
   async findAll(): Promise<Greeting[]> {

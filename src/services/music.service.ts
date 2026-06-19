@@ -1,4 +1,4 @@
-import { MusicRepository } from 'repositories/music.repository';
+import { MusicRepository } from '../repositories/music.repository';
 import { Prisma } from '@prisma/client';
 
 export class MusicService {

@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { FileController } from 'controllers/fileController';
-import { validate } from 'middlewares/validate.middleware';
-import { fileIdSchema, createFileSchema, updateFileSchema } from 'validators/file.validator';
+import { FileController } from '../controllers/fileController';
+import { validate } from '../middlewares/validate.middleware';
+import { fileIdSchema, createFileSchema, updateFileSchema } from '../validators/file.validator';
 
 const router: Router = Router();
 const fileController = new FileController();

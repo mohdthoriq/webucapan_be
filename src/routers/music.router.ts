@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { MusicController } from 'controllers/musicController';
-import { validate } from 'middlewares/validate.middleware';
+import { MusicController } from '../controllers/musicController';
+import { validate } from '../middlewares/validate.middleware';
 import {
   musicIdSchema,
   queryMusicSchema,
   createMusicSchema,
   updateMusicSchema,
-} from 'validators/music.validator';
+} from '../validators/music.validator';
 
 const router: Router = Router();
 const controller = new MusicController();

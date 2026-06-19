@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { GreetingShareService } from 'services/gretting-share.service';
-import { successResponse } from 'utils/response';
+import { GreetingShareService } from '../services/gretting-share.service';
+import { successResponse } from '../utils/response';
 
 const shareService = new GreetingShareService();
 

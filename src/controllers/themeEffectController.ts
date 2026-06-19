@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { ThemeEffectService } from 'services/theme-effect.service';
-import { successResponse } from 'utils/response';
+import { ThemeEffectService } from '../services/theme-effect.service';
+import { successResponse } from '../utils/response';
 
 const themeEffectService = new ThemeEffectService();
 

@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { GreetingShareController } from 'controllers/greetingShareController';
-import { validate } from 'middlewares/validate.middleware';
+import { GreetingShareController } from '../controllers/greetingShareController';
+import { validate } from '../middlewares/validate.middleware';
 import {
   greetingShareIdSchema,
   greetingShareByGreetingIdSchema,
   createGreetingShareSchema,
   updateGreetingShareSchema,
-} from 'validators/greeting-share.validator';
+} from '../validators/greeting-share.validator';
 
 const router: Router = Router();
 const controller = new GreetingShareController();

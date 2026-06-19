@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { EffectController } from 'controllers/effectController';
-import { validate } from 'middlewares/validate.middleware';
-import { createEffectSchema, updateEffectSchema } from 'validators/effect.validator';
+import { EffectController } from '../controllers/effectController';
+import { validate } from '../middlewares/validate.middleware';
+import { createEffectSchema, updateEffectSchema } from '../validators/effect.validator';
 
 const router: Router = Router();
 const effectController = new EffectController();
@@ -14,3 +14,4 @@ router.put('/:id', validate(updateEffectSchema), effectController.update);
 router.delete('/:id', effectController.delete);
 
 export default router;
+

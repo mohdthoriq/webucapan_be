@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { ThemeController } from 'controllers/themeController';
-import { validate } from 'middlewares/validate.middleware';
+import { ThemeController } from '../controllers/themeController';
+import { validate } from '../middlewares/validate.middleware';
 import {
   themeIdSchema,
   queryThemeSchema,
   createThemeSchema,
   updateThemeSchema,
-} from 'validators/theme.validator';
+} from '../validators/theme.validator';
 
 const router: Router = Router();
 const controller = new ThemeController();

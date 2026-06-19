@@ -1,6 +1,6 @@
-import { GreetingViewRepository } from 'repositories/greeting-view.repository';
+import { GreetingViewRepository } from '../repositories/greeting-view.repository';
 import { Prisma } from '@prisma/client';
-import { prisma } from 'config/prisma'; // Import prisma langsung jika ingin update view_count
+import { prisma } from '../config/prisma'; // Import prisma langsung jika ingin update view_count
 
 export class GreetingViewService {
   private repository: GreetingViewRepository;

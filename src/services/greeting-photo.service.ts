@@ -1,4 +1,4 @@
-import { GreetingPhotoRepository } from 'repositories/greeting-photo.repository';
+import { GreetingPhotoRepository } from '../repositories/greeting-photo.repository';
 import { Prisma } from '@prisma/client';
 
 export class GreetingPhotoService {

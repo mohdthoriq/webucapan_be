@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { ThemeEffectController } from 'controllers/themeEffectController';
-import { validate } from 'middlewares/validate.middleware';
+import { ThemeEffectController } from '../controllers/themeEffectController';
+import { validate } from '../middlewares/validate.middleware';
 import {
   themeEffectParamsSchema,
   themeIdParamSchema,
   effectIdParamSchema,
   assignThemeEffectSchema,
-} from 'validators/theme-effect.validator';
+} from '../validators/theme-effect.validator';
 
 const router: Router = Router();
 const controller = new ThemeEffectController();

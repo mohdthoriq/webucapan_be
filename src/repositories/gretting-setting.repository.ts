@@ -1,4 +1,4 @@
-import { prisma } from 'config/prisma';
+import { prisma } from '../config/prisma';
 import { Prisma, type GreetingSetting } from '@prisma/client';
 
 export class GreetingSettingRepository {

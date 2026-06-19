@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { EffectService } from 'services/effect.service';
-import { successResponse } from 'utils/response';
+import { EffectService } from '../services/effect.service';
+import { successResponse } from '../utils/response';
 
 const effectService = new EffectService();
 

@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { ThemeService } from 'services/theme.service';
-import { successResponse } from 'utils/response';
+import { ThemeService } from '../services/theme.service';
+import { successResponse } from '../utils/response';
 
 const themeService = new ThemeService();
 

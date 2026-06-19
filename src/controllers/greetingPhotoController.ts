@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { GreetingPhotoService } from 'services/greeting-photo.service';
-import { successResponse } from 'utils/response';
+import { GreetingPhotoService } from '../services/greeting-photo.service';
+import { successResponse } from '../utils/response';
 
 const greetingPhotoService = new GreetingPhotoService();
 

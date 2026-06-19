@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { GreetingViewController } from 'controllers/greetingViewController';
-import { validate } from 'middlewares/validate.middleware';
+import { GreetingViewController } from '../controllers/greetingViewController';
+import { validate } from '../middlewares/validate.middleware';
 import {
   greetingViewIdSchema,
   greetingViewByGreetingIdSchema,
   createGreetingViewSchema,
   updateGreetingViewSchema,
-} from 'validators/greeting-view.validator';
+} from '../validators/greeting-view.validator';
 
 const router: Router = Router();
 const controller = new GreetingViewController();

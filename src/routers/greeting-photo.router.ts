@@ -1,13 +1,13 @@
 import { Router } from 'express';
-import { GreetingPhotoController } from 'controllers/greetingPhotoController';
-import { validate } from 'middlewares/validate.middleware';
+import { GreetingPhotoController } from '../controllers/greetingPhotoController';
+import { validate } from '../middlewares/validate.middleware';
 import {
   greetingPhotoIdSchema,
   greetingPhotoByGreetingIdSchema,
   createGreetingPhotoSchema,
   updateGreetingPhotoSchema,
   reorderGreetingPhotoSchema,
-} from 'validators/greeting-photo.validator';
+} from '../validators/greeting-photo.validator';
 
 const router: Router = Router();
 const greetingPhotoController = new GreetingPhotoController();

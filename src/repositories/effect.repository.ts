@@ -1,5 +1,5 @@
 import type { Prisma, Effect } from '@prisma/client';
-import { prisma } from 'config/prisma';
+import { prisma } from '../config/prisma';
 
 export class EffectRepository {
   async findAll(): Promise<Effect[]> {

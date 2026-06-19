@@ -1,4 +1,4 @@
-import { GreetingSettingRepository } from 'repositories/gretting-setting.repository';
+import { GreetingSettingRepository } from '../repositories/gretting-setting.repository';
 import { Prisma } from '@prisma/client';
 
 export class GreetingSettingService {

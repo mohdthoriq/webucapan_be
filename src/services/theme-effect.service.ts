@@ -1,4 +1,4 @@
-import { ThemeEffectRepository } from 'repositories/theme-effect.repository';
+import { ThemeEffectRepository } from '../repositories/theme-effect.repository';
 import { Prisma } from '@prisma/client';
 
 export class ThemeEffectService {

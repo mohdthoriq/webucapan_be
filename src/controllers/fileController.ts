@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 import { FileService } from '../services/file.service';
-import { successResponse } from 'utils/response';
+import { successResponse } from '../utils/response';
 
 const fileService = new FileService();
 
