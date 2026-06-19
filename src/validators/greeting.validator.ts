@@ -11,17 +11,18 @@ export const greetingSlugSchema = z.object({
     slug: z
       .string()
       .min(1, { message: 'Slug tidak boleh kosong' })
-      .max(8, { message: 'Slug maksimal 8 karakter' }),
+      .max(8, { message: 'Slug maksimal 8 karakter' })
+      .regex(/^[a-z0-9-]+$/, { message: 'Slug can have lowercase letters, digits, or hyphens...' }),
   }),
 });
 
 export const createGreetingSchema = z.object({
   body: z.object({
     slug: z
-      .string()
+      .string({ message: 'Slug is required' })
       .min(1, { message: 'Slug tidak boleh kosong' })
       .max(8, { message: 'Slug maksimal 8 karakter' })
-      .optional(), // Biasanya auto-generated tapi bisa dikirim
+      .regex(/^[a-z0-9-]+$/, { message: 'Slug can have lowercase letters, digits, or hyphens...' }),
     recipient_name: z
       .string()
       .min(1, { message: 'Nama penerima tidak boleh kosong' })
@@ -77,6 +78,7 @@ export const updateGreetingSchema = greetingIdSchema.merge(
         .string()
         .min(1, { message: 'Slug tidak boleh kosong' })
         .max(8, { message: 'Slug maksimal 8 karakter' })
+        .regex(/^[a-z0-9-]+$/, { message: 'Slug can have lowercase letters, digits, or hyphens...' })
         .optional(),
       recipient_name: z
         .string()

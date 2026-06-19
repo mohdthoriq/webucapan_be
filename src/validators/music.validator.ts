@@ -22,7 +22,7 @@ export const createMusicSchema = z.object({
   body: z.object({
     title: z
       .string()
-      .min(1, { message: 'Title tidak boleh kosong' })
+      .min(3, { message: 'Title minimal 3 karakter' })
       .max(255, { message: 'Title maksimal 255 karakter' }),
     file_url: z
       .string()
@@ -47,7 +47,7 @@ export const updateMusicSchema = musicIdSchema.merge(
     body: z.object({
       title: z
         .string()
-        .min(1, { message: 'Title tidak boleh kosong' })
+        .min(3, { message: 'Title minimal 3 karakter' })
         .max(255, { message: 'Title maksimal 255 karakter' })
         .optional(),
       file_url: z
