@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import config from '../utils/env';
+import {env} from '../utils/env';
 import { errorResponse } from '../utils/response';
 
 export const authenticate = (req: Request, res: Response, next: NextFunction) => {
@@ -15,7 +15,7 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
     const token = authHeader?.split(' ')[1];
 
     try {
-        const payload = jwt.verify(token!, config.JWT_SECRET) as { id: string, role: string, institutionId: string, institutionName: string }
+        const payload = jwt.verify(token!, env.JWT_SECRET!) as { id: string, role: string, institutionId: string, institutionName: string }
 
         req.user = payload
 
