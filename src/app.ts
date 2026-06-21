@@ -17,6 +17,7 @@ import greetingViewRouter from "./routers/greeting-view.router"
 import musicRouter from "./routers/music.router"
 import themeRouter from "./routers/theme-router"
 import themeEffectRouter from "./routers/theme-effect.router"
+import swaggerSpec from "./utils/swagger";
 
 const app: Application = express()
 
@@ -39,9 +40,8 @@ app.use(cors()) // Middleware biar bisa di akses dari frontend
 // `cors()`: Memungkinkan atau membatasi resource di server agar dapat diakses oleh domain lain (Cross-Origin Resource Sharing).
 //           Sangat penting untuk API yang akan diakses oleh frontend dari domain berbeda.
 
-app.use(requestLogger)
-
-// app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+app.use(requestLogger);
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 
 app.get('/', (_req: Request, res: Response) => {
