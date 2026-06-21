@@ -48,4 +48,50 @@ export class FileController {
     await fileService.deleteFile(req.params.id as string);
     successResponse(res, "Delete file successfully", null, null, 200);
   }
+
+  async uploadMultipleImages(req: Request, res: Response) {
+    if (!req.files || !Array.isArray(req.files) || req.files.length === 0) {
+      throw new Error("Tidak ada file gambar yang diunggah");
+    }
+
+    const filesData = req.files as any[];
+    const createdFiles = [];
+
+    for (const file of filesData) {
+      const payload = {
+        file_name: file.originalname,
+        file_url: file.path,
+        file_type: "image",
+        mime_type: file.mimetype,
+        file_size: file.size ? BigInt(file.size) : null,
+        storage_path: file.filename,
+      };
+
+      const newFile = await fileService.createFile(payload);
+      createdFiles.push(newFile);
+    }
+
+    successResponse(res, "Upload foto-foto berhasil", serializeData(createdFiles), null, 201);
+  }
+
+  async uploadSingleMusic(req: Request, res: Response) {
+    if (!req.file) {
+      throw new Error("Tidak ada file musik yang diunggah");
+    }
+
+    const file = req.file;
+    const fileUrl = `${req.protocol}://${req.get('host')}/uploads/music/${file.filename}`;
+
+    const payload = {
+      file_name: file.originalname,
+      file_url: fileUrl,
+      file_type: "audio",
+      mime_type: file.mimetype,
+      file_size: file.size ? BigInt(file.size) : null,
+      storage_path: `public/uploads/music/${file.filename}`,
+    };
+
+    const newFile = await fileService.createFile(payload);
+    successResponse(res, "Upload musik berhasil", serializeData(newFile), null, 201);
+  }
 }
