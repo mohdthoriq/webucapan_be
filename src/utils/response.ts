@@ -18,6 +18,15 @@ export interface ApiResponse {
   }> | { stack?: string };
 }
 
+const serializeData = (data: any) => {
+  if (data === null || data === undefined) return data;
+  return JSON.parse(
+    JSON.stringify(data, (_key, value) =>
+      typeof value === 'bigint' ? value.toString() : value
+    )
+  );
+};
+
 export const successResponse = (
   res: Response,
   message: string,
@@ -30,7 +39,7 @@ export const successResponse = (
     message,
   };
 
-  if (data !== null) response.data = data;
+  if (data !== null) response.data = serializeData(data);
   if (pagination) response.pagination = pagination;
 
   return res.status(statusCode).json(response);
