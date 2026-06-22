@@ -54,10 +54,9 @@ export class FileController {
       throw new Error("Tidak ada file gambar yang diunggah");
     }
 
-    const filesData = req.files as any[];
-    const createdFiles = [];
+    const filesData = req.files as Express.Multer.File[];
 
-    for (const file of filesData) {
+    const uploadPromises = filesData.map(async (file: Express.Multer.File) => {
       const payload = {
         file_name: file.originalname,
         file_url: file.path,
@@ -67,9 +66,10 @@ export class FileController {
         storage_path: file.filename,
       };
 
-      const newFile = await fileService.createFile(payload);
-      createdFiles.push(newFile);
-    }
+      return fileService.createFile(payload);
+    });
+
+    const createdFiles = await Promise.all(uploadPromises);
 
     successResponse(res, "Upload foto-foto berhasil", serializeData(createdFiles), null, 201);
   }
