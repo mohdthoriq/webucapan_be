@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { registry } from '../registry';
+import { registry } from '../registry.js';
 
 export const paginationSchema = registry.register(
   'Pagination',

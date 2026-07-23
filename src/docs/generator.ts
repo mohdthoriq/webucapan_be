@@ -1,6 +1,6 @@
 import { OpenApiGeneratorV3 } from '@asteasolutions/zod-to-openapi';
-import { registry } from './registry';
-import { bootstrapOpenApi } from './bootstrap';
+import { registry } from './registry.js';
+import { bootstrapOpenApi } from './bootstrap.js';
 
 // Initialize and bootstrap OpenAPI registrations
 bootstrapOpenApi();
