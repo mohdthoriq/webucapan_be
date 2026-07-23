@@ -44,12 +44,12 @@ app.use(
     },
   })
 );
-app.use(cors())
+// app.use(cors())
 
 app.use(requestLogger);
 
 app.get('/api/v1/docs-json', (_req: Request, res: Response) => {
-  res.setHeader('Content-Type', 'application/json');
+  res.header('Content-Type', 'application/json');
   res.send(openApiDocument);
 });
 
@@ -81,7 +81,7 @@ app.use('/api/v1/theme-effect', themeEffectRouter)
 
 
 app.get('/favicon.ico', (_req: Request, res: Response) => {
-  res.status(204).end();
+  res.status(204).send();
 });
 
 app.get(/.*/, (req: Request, res: Response) => {
