@@ -1,7 +1,11 @@
-import app from "./app";
-import { env } from './utils/env'
+import app from "./app.js";
+import { env } from './utils/env.js';
 
-app.listen(env.PORT, () => {
+if (!process.env.VERCEL) {
+  app.listen(env.PORT, () => {
     console.log(`Server running at → ${env.HOST}`);
     console.log(`Coba buka semua route di atas pakai Postman!`);
-});
+  });
+}
+
+export default app;
