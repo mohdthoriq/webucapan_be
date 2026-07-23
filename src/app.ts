@@ -1,5 +1,5 @@
-import "dotenv/config";
-import "./docs/registry";
+import "dotenv/config.js";
+import "./docs/registry.js";
 import express, { type Application, type Request, type Response } from "express";
 import cors from "cors";
 import morgan from "morgan";
